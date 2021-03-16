@@ -1,0 +1,19 @@
+# Framework for running automated tests on OSB using Travis-CI, see https://github.com/OpenSourceBrain/osb-model-validation
+
+dist: bionic
+
+language: python
+
+python:
+  - "3.8"
+  - "3.9"
+
+install:
+    - pip install arbor
+
+script:
+
+    # Basic test
+    - cd Arbor
+    - python info.py
+    - pip freeze
