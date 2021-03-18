@@ -1,0 +1,27 @@
+<neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2.1.xsd" id="BallAndStick">
+    <cell id="BallAndStick">
+        <morphology id="morphology">
+            <segment id="0" name="soma">
+                <proximal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="20.0"/>
+                <distal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="20.0"/>
+            </segment>
+            <segment id="1" name="dend1">
+                <parent segment="0"/>
+                <proximal x="0.000000e+00" y="0.000000e+00" z="0.000000e+00" diameter="5.0"/>
+                <distal x="3.000000e+01" y="0.000000e+00" z="0.000000e+00" diameter="5.0"/>
+            </segment>
+            <segment id="2" name="dend2">
+                <parent segment="1"/>
+                <proximal x="3.000000e+01" y="0.000000e+00" z="0.000000e+00" diameter="4.0"/>
+                <distal x="6.000000e+01" y="0.000000e+00" z="0.000000e+00" diameter="4.0"/>
+            </segment>
+            <segmentGroup neuroLexId="GO:0043025" id="soma_group">
+                <member segment="0"/>
+            </segmentGroup>
+            <segmentGroup neuroLexId="GO:0030425" id="dendrite_group">
+                <member segment="1"/>
+                <member segment="2"/>
+            </segmentGroup>
+        </morphology>
+    </cell>
+</neuroml>
