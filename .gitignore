@@ -7,3 +7,4 @@
 x86_64
 /NeuroML2/report.*.txt
 /NeuroML2/LEMS_SimTestNet_nrn.py
+/NeuroML2/BallAndStick.cell.svg
