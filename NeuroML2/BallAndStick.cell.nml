@@ -1,4 +1,5 @@
 <neuroml xmlns="http://www.neuroml.org/schema/neuroml2"  xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.neuroml.org/schema/neuroml2 https://raw.github.com/NeuroML/NeuroML2/development/Schemas/NeuroML2/NeuroML_v2.1.xsd" id="BallAndStick">
+    <include href="pas.channel.nml"/>
     <cell id="BallAndStick">
         <morphology id="morphology">
             <segment id="0" name="soma">
@@ -23,5 +24,15 @@
                 <member segment="2"/>
             </segmentGroup>
         </morphology>
+        <biophysicalProperties id="biophys">
+            <membraneProperties>
+                <channelDensity id="pas_chan" ionChannel="pas" condDensity="0.021 mS_per_cm2" erev="-70.0 mV" ion="non_specific"/>
+                <specificCapacitance value="1.0 uF_per_cm2"/>
+                <initMembPotential value="-65mV"/>
+            </membraneProperties>
+            <intracellularProperties>
+                <resistivity value="1000 ohm_cm"/>
+            </intracellularProperties>
+        </biophysicalProperties>
     </cell>
 </neuroml>
