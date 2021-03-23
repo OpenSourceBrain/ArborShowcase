@@ -2,7 +2,7 @@
     
     <!-- 
 
-        This LEMS file has been automatically generated using PyNeuroML v0.5.9 (libNeuroML v0.2.54)
+        This LEMS file has been automatically generated using PyNeuroML v0.5.11 (libNeuroML v0.2.55)
 
      -->
     
@@ -24,17 +24,29 @@
             <Line id="pop0_0_BallAndStick_0_v" quantity="pop0/0/BallAndStick/0/v" scale="1mV" color="#d54f33" timeScale="1ms"/>
             <Line id="pop0_0_BallAndStick_1_v" quantity="pop0/0/BallAndStick/1/v" scale="1mV" color="#0534e4" timeScale="1ms"/>
             <Line id="pop0_0_BallAndStick_2_v" quantity="pop0/0/BallAndStick/2/v" scale="1mV" color="#98e752" timeScale="1ms"/>
+            <Line id="pop0_0_BallAndStick_3_v" quantity="pop0/0/BallAndStick/3/v" scale="1mV" color="#bca074" timeScale="1ms"/>
+            <Line id="pop0_0_BallAndStick_4_v" quantity="pop0/0/BallAndStick/4/v" scale="1mV" color="#632794" timeScale="1ms"/>
+            <Line id="pop0_0_BallAndStick_5_v" quantity="pop0/0/BallAndStick/5/v" scale="1mV" color="#8a5d88" timeScale="1ms"/>
+            <Line id="pop0_0_BallAndStick_6_v" quantity="pop0/0/BallAndStick/6/v" scale="1mV" color="#df5954" timeScale="1ms"/>
+            <Line id="pop0_0_BallAndStick_7_v" quantity="pop0/0/BallAndStick/7/v" scale="1mV" color="#52c8bf" timeScale="1ms"/>
+            <Line id="pop0_0_BallAndStick_8_v" quantity="pop0/0/BallAndStick/8/v" scale="1mV" color="#bf0239" timeScale="1ms"/>
+            <Line id="pop0_0_BallAndStick_9_v" quantity="pop0/0/BallAndStick/9/v" scale="1mV" color="#3f9fe8" timeScale="1ms"/>
+            <Line id="pop0_0_BallAndStick_10_v" quantity="pop0/0/BallAndStick/10/v" scale="1mV" color="#dda9d2" timeScale="1ms"/>
         </Display>
         
         <OutputFile id="SimTestNet_pop0_v_dat" fileName="SimTestNet.pop0.v.dat">
             <OutputColumn id="pop0_0_BallAndStick_0_v" quantity="pop0/0/BallAndStick/0/v"/> 
             <OutputColumn id="pop0_0_BallAndStick_1_v" quantity="pop0/0/BallAndStick/1/v"/> 
             <OutputColumn id="pop0_0_BallAndStick_2_v" quantity="pop0/0/BallAndStick/2/v"/> 
+            <OutputColumn id="pop0_0_BallAndStick_3_v" quantity="pop0/0/BallAndStick/3/v"/> 
+            <OutputColumn id="pop0_0_BallAndStick_4_v" quantity="pop0/0/BallAndStick/4/v"/> 
+            <OutputColumn id="pop0_0_BallAndStick_5_v" quantity="pop0/0/BallAndStick/5/v"/> 
+            <OutputColumn id="pop0_0_BallAndStick_6_v" quantity="pop0/0/BallAndStick/6/v"/> 
+            <OutputColumn id="pop0_0_BallAndStick_7_v" quantity="pop0/0/BallAndStick/7/v"/> 
+            <OutputColumn id="pop0_0_BallAndStick_8_v" quantity="pop0/0/BallAndStick/8/v"/> 
+            <OutputColumn id="pop0_0_BallAndStick_9_v" quantity="pop0/0/BallAndStick/9/v"/> 
+            <OutputColumn id="pop0_0_BallAndStick_10_v" quantity="pop0/0/BallAndStick/10/v"/> 
         </OutputFile>
-        
-        <EventOutputFile id="SimTestNet_pop0_spikes" fileName="SimTestNet.pop0.spikes" format="ID_TIME">
-            <EventSelection id="0" select="pop0/0/BallAndStick" eventPort="spike"/> 
-        </EventOutputFile>
         
     </Simulation>
 

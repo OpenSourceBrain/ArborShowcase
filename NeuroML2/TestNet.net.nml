@@ -3,9 +3,9 @@
     Generated network: TestNet
     Generation seed: 1234
     NeuroMLlite parameters: 
-        input_amp1 = 0.1</notes>
+        input_amp1 = 0.05</notes>
     <include href="BallAndStick.cell.nml"/>
-    <pulseGenerator id="i_clamp1" delay="100.0ms" duration="200.0ms" amplitude="0.1nA"/>
+    <pulseGenerator id="i_clamp1" delay="100.0ms" duration="200.0ms" amplitude="0.05nA"/>
     <network id="TestNet">
         <notes>Current clamp input</notes>
         <property tag="recommended_dt_ms" value="0.025"/>
