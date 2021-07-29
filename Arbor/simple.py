@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 import arbor
-
+import sys
 
 # (1) Create a morphology with a single (cylindrical) segment of length=diameter=6 μm
 tree = arbor.segment_tree()
@@ -15,8 +15,8 @@ labels = arbor.label_dict({'soma':   '(tag 1)',
 decor = arbor.decor()
 decor.set_property(Vm=-40)
 decor.paint('"soma"', 'hh')
-decor.place('"midpoint"', arbor.iclamp( 10, 2, 0.8))
-decor.place('"midpoint"', arbor.spike_detector(-10))
+decor.place('"midpoint"', arbor.iclamp( 10, 2, 0.8), 'iclamp')
+decor.place('"midpoint"', arbor.spike_detector(-10), 'detector')
 
 # (4) Create cell and the single cell model based on it
 cell = arbor.cable_cell(tree, labels, decor)
@@ -38,15 +38,16 @@ if len(m.spikes)>0:
 else:
     print('no spikes')
 
-import matplotlib.pylab as plt
-# (8) Plot the recorded voltages over time.
-print("Plotting results ...")
+if not '-nogui' in sys.argv:
+    import matplotlib.pylab as plt
+    # (8) Plot the recorded voltages over time.
+    print("Plotting results ...")
 
 
-#seaborn.set_theme() # Apply some styling to the plot
-plt.plot(m.traces[0].time, m.traces[0].value, )
+    #seaborn.set_theme() # Apply some styling to the plot
+    plt.plot(m.traces[0].time, m.traces[0].value, )
 
-plt.xlabel('Time (ms)')
-plt.ylabel('Voltage (mV)')
+    plt.xlabel('Time (ms)')
+    plt.ylabel('Voltage (mV)')
 
-plt.show()
+    plt.show()

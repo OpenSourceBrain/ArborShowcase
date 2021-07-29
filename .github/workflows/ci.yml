@@ -40,4 +40,5 @@ jobs:
         python info.py
         python network_ring.py
         python custom_net.py
+        python simple.py -nogui
         pip freeze
