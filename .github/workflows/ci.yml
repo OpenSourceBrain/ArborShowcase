@@ -33,10 +33,11 @@ jobs:
     - name: Install Arbor
       run: |
         pip install arbor
-        pip install pandas
+        pip install pandas seaborn
     - name: Run Arbor example
       run: |
         cd Arbor
         python info.py
         python network_ring.py
+        python custom_net.py
         pip freeze

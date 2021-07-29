@@ -39,10 +39,10 @@ def make_cable_cell(gid):
     decor.paint('"dend"', 'pas')
 
     # (4) Attach a single synapse.
-    decor.place('"synapse_site"', 'expsyn')
+    decor.place('"synapse_site"', 'expsyn', 'syn')
 
     # Attach a spike detector with threshold of -10 mV.
-    decor.place('"root"', arbor.spike_detector(-10))
+    decor.place('"root"', arbor.spike_detector(-10), 'detector')
 
     cell = arbor.cable_cell(tree, labels, decor)
 
@@ -82,7 +82,7 @@ class custom_recipe(arbor.recipe):
         src = (gid-1)%self.ncells
         w = 0.01
         d = 5
-        return [arbor.connection((src,0), (gid,0), w, d)]
+        return [arbor.connection((src,'detector'), 'syn', w, d)]
 
     def num_targets(self, gid):
         return 1
@@ -94,7 +94,8 @@ class custom_recipe(arbor.recipe):
     def event_generators(self, gid):
         if gid==0:
             sched = arbor.explicit_schedule([1])
-            return [arbor.event_generator((0,0), 0.1, sched)]
+            weight = 0.1
+            return [arbor.event_generator('syn', weight, sched)]
         return []
 
     # (10) Place a probe at the root of each cell.
@@ -137,4 +138,4 @@ for gid in range(ncells):
     df_list.append(pandas.DataFrame({'t/ms': samples[:, 0], 'U/mV': samples[:, 1], 'Cell': f"cell {gid}"}))
 
 df = pandas.concat(df_list)
-seaborn.relplot(data=df, kind="line", x="t/ms", y="U/mV",hue="Cell",ci=None).savefig('network_ring_result.png')
+seaborn.relplot(data=df, kind="line", x="t/ms", y="U/mV",hue="Cell",ci=None).savefig('custom_net_result.png')
