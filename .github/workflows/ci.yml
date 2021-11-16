@@ -42,3 +42,15 @@ jobs:
         python custom_net.py
         python simple.py -nogui
         pip freeze
+
+    - name: Install OMV
+      run: |
+        pip install git+https://github.com/OpenSourceBrain/osb-model-validation
+        pip install scipy sympy matplotlib cython pandas tables
+    - name: Run OMV tests
+      run: |
+        omv all -V
+    - name: OMV final version info
+      run: |
+        omv list -V # list installed engines
+        env

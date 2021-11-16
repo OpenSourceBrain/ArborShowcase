@@ -1,0 +1,6 @@
+system: Test Bal
+
+experiments:
+    E:
+        expected:
+            spike times: [ 130.75  ]
