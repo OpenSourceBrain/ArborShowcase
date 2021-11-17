@@ -9,3 +9,4 @@ x86_64
 /NeuroML2/LEMS_SimTestNet_nrn.py
 /NeuroML2/BallAndStick.cell.svg
 /Arbor/custom_net_result.png
+/NeuroML2/tests/*.dat
