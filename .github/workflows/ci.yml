@@ -30,10 +30,17 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version:  ${{ matrix.python-version }}
+
+    - name: Install OMV
+      run: |
+        pip install git+https://github.com/OpenSourceBrain/osb-model-validation
+        omv list -V 
+
     - name: Install Arbor
       run: |
         pip install arbor
         pip install pandas seaborn
+
     - name: Run Arbor example
       run: |
         cd Arbor
@@ -43,10 +50,7 @@ jobs:
         python simple.py -nogui
         pip freeze
 
-    - name: Install OMV
-      run: |
-        pip install git+https://github.com/OpenSourceBrain/osb-model-validation
-        pip install scipy sympy matplotlib cython pandas tables
+
     - name: Run OMV tests
       run: |
         omv all -V
