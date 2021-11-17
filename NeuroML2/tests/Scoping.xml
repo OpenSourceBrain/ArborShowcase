@@ -7,8 +7,10 @@
   <Include file="Simulation.xml"/>
 
   <ComponentType name="base">
+
     <Parameter name="p_base" dimension="none"/>
     <Exposure name="d_p_base" dimension="none"/>
+
     <Child name="in0" type="inner"/>
 
     <Dynamics>
@@ -20,10 +22,12 @@
       <!-- Fun fact: using pylems and 'in' implodes, since using `x.in` is a syntax error -->
       <DerivedVariable name="d_p_in" select="in0/dd_inner" dimension="none"/>
     </Dynamics>
+
   </ComponentType>
 
   <ComponentType name="inner">
-    <!-- <Requirement name="e_p_base" dimension="none"/> -->
+
+    <Requirement name="d_p_base" dimension="none"/> <!-- This needs to be exposed on parent-->
     <Exposure name="dd_inner" dimension="none"/>
 
     <Dynamics>
@@ -32,8 +36,7 @@
       <!-- Setting derived vars from others-->
       <DerivedVariable name="dd_inner" value="2*d_inner" exposure="dd_inner"/>
 
-      <!-- TODO Getting variables from outer scope
-      <DerivedVariable name="dp_base" value="e_p_base"/> -->
+      <DerivedVariable name="d_p_base_inner" value="d_p_base"/>
     </Dynamics>
   </ComponentType>
 
@@ -50,8 +53,10 @@
        <OutputFile id="test" fileName="test.dat">
            <OutputColumn id="0" quantity="d_base"/>
            <OutputColumn id="1" quantity="d_p_base"/>
+           <OutputColumn id="2" quantity="d_p_in"/>
            <OutputColumn id="3" quantity="myin0/d_inner"/>
            <OutputColumn id="4" quantity="myin0/dd_inner"/>
+           <OutputColumn id="5" quantity="myin0/d_p_base_inner"/>
        </OutputFile>
 
    </Simulation>
