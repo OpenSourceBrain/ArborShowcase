@@ -1,6 +1,6 @@
 {
     "TestNet": {
-        "version": "NeuroMLlite v0.3.0",
+        "version": "NeuroMLlite v0.4.3",
         "parameters": {
             "input_amp1": 0.05
         },
