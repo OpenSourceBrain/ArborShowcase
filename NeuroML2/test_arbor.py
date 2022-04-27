@@ -37,9 +37,10 @@ labels['soma'] = '(location 0 0.5)'
 
 decor = arbor.decor()
 
-decor.paint('"all"', arbor.mechanism('pas', dict(g=2.01e-05)))
+decor.paint('"all"', arbor.density('pas', dict(g=2.01e-05)))
 
-decor.place('"stim_site"', arbor.iclamp( 100, 200, 0.1))
+decor.place('"stim_site"', arbor.iclamp( 100, 200, 0.1), 'iclamp')
+
 
 
 # Combine morphology with region and locset definitions to make a cable cell.
