@@ -10,3 +10,6 @@ x86_64
 /NeuroML2/BallAndStick.cell.svg
 /Arbor/custom_net_result.png
 /NeuroML2/tests/*.dat
+/NeuroML2/neuromllite/*.dat
+/NeuroML2/neuromllite/ArborExample.json
+/NeuroML2/neuromllite/SimArborExample.json

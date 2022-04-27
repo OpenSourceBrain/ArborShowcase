@@ -34,7 +34,7 @@ jobs:
     - name: Install OMV
       run: |
         pip install git+https://github.com/OpenSourceBrain/osb-model-validation
-        omv list -V 
+        omv list -V
 
     - name: Install Arbor
       run: |
@@ -54,6 +54,17 @@ jobs:
     - name: Run OMV tests
       run: |
         omv all -V
+
+    - name: Run NeuroML examples
+      run: |
+        cd NeuroML2
+
+        python test_arbor.py
+
+        cd neuromllite 
+        ./test.sh
+
+
     - name: OMV final version info
       run: |
         omv list -V # list installed engines
