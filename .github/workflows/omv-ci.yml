@@ -38,7 +38,7 @@ jobs:
 
     - name: Install Arbor
       run: |
-        pip install arbor
+        omv install arbor # use omv preferred version...
         pip install pandas seaborn
 
     - name: Run Arbor example
