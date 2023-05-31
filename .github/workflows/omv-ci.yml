@@ -21,6 +21,7 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         python-version: [ 3.7, 3.9 ]
         engine: [ jNeuroML_NEURON, pyNeuroML, jNeuroML, Arbor, "Arbor:0.7", "Arbor:0.8", "Arbor:0.8.1" ]
