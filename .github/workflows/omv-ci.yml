@@ -62,7 +62,8 @@ jobs:
         cd NeuroML2
 
         python test_arbor.py
-
+        omv install pyneuroML
+        omv install pynn
         cd neuromllite 
         pip install pynn==0.10.1
         ./test.sh
