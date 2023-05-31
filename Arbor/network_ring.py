@@ -52,9 +52,9 @@ def make_cable_cell(gid):
     decor.place('"synapse_site"', arbor.synapse('expsyn'), 'syn')
 
     # Attach a spike detector with threshold of -10 mV.
-    decor.place('"root"', arbor.spike_detector(-10), 'detector')
+    decor.place('"root"', arbor.threshold_detector(-10), 'detector')
 
-    cell = arbor.cable_cell(tree, labels, decor)
+    cell = arbor.cable_cell(tree, labels=labels, decor=decor)
 
     return cell
 
@@ -111,7 +111,7 @@ recipe = ring_recipe(ncells)
 # (12) Create a default execution context, domain decomposition and simulation
 context = arbor.context()
 decomp = arbor.partition_load_balance(recipe, context)
-sim = arbor.simulation(recipe, decomp, context)
+sim = arbor.simulation(recipe, domains=decomp, context=context)
 
 # (13) Set spike generators to record
 sim.record(arbor.spike_recording.all)

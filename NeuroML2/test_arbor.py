@@ -44,7 +44,7 @@ decor.place('"stim_site"', arbor.iclamp( 100, 200, 0.1), 'iclamp')
 
 
 # Combine morphology with region and locset definitions to make a cable cell.
-cell = arbor.cable_cell(morpho, labels, decor)
+cell = arbor.cable_cell(morpho, labels=labels, decor=decor)
 print(cell.locations('"dend_end"'))
 
 # Make single cell model.

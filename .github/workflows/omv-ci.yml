@@ -21,8 +21,10 @@ jobs:
     runs-on: ubuntu-latest
 
     strategy:
+      fail-fast: false
       matrix:
         python-version: [ 3.7, 3.9 ]
+        engine: [ jNeuroML_NEURON, pyNeuroML, jNeuroML, Arbor, "Arbor:0.8", "Arbor:0.8.1" ]
 
     steps:
     - uses: actions/checkout@v2
@@ -36,8 +38,13 @@ jobs:
         pip install git+https://github.com/OpenSourceBrain/osb-model-validation
         omv list -V
 
+    - name: Run OMV tests on engine ${{ matrix.engine }}
+      run: |
+        omv all -V --engine=${{ matrix.engine }}
+        
     - name: Install Arbor
       run: |
+        # Note: specific version of Arbor may have been nstalled above if Arbor version specfied
         omv install arbor # use omv preferred version...
         pip install pandas seaborn
 
@@ -50,19 +57,16 @@ jobs:
         python simple.py -nogui
         pip freeze
 
-
-    - name: Run OMV tests
-      run: |
-        omv all -V
-
     - name: Run NeuroML examples
       run: |
         cd NeuroML2
 
         python test_arbor.py
-
+        
+        omv install pyneuroML
+        omv install pynn
         cd neuromllite 
-        pip install pynn==0.9.6
+        pip install pynn==0.10.1
         ./test.sh
 
 
