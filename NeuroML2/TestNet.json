@@ -1,10 +1,10 @@
 {
     "TestNet": {
-        "version": "NeuroMLlite v0.4.3",
+        "version": "NeuroMLlite v0.5.8",
+        "notes": "Current clamp input",
         "parameters": {
             "input_amp1": 0.05
         },
-        "notes": "Current clamp input",
         "cells": {
             "BallAndStick": {
                 "neuroml2_source_file": "BallAndStick.cell.nml"
@@ -12,12 +12,12 @@
         },
         "input_sources": {
             "i_clamp1": {
-                "pynn_input": "DCSource",
                 "parameters": {
                     "amplitude": "input_amp1",
                     "start": 100,
                     "stop": 300
-                }
+                },
+                "pynn_input": "DCSource"
             }
         },
         "regions": {
@@ -46,7 +46,7 @@
             "stim1": {
                 "input_source": "i_clamp1",
                 "population": "pop0",
-                "percentage": 100.0
+                "percentage": 100
             }
         }
     }

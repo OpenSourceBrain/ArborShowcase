@@ -1,11 +1,11 @@
 <Lems>
-    
+
     <!-- 
 
-        This LEMS file has been automatically generated using PyNeuroML v0.6.0 (libNeuroML v0.3.2)
+        This LEMS file has been automatically generated using PyNeuroML v1.1.8 (libNeuroML v0.5.6)
 
      -->
-    
+
     <!-- Specify which component to run -->
     <Target component="SimTestNet" reportFile="report.SimTestNet.txt"/>
 
@@ -13,13 +13,12 @@
     <Include file="Cells.xml"/>
     <Include file="Networks.xml"/>
     <Include file="Simulation.xml"/>
-    
+
     <Include file="PyNN.xml"/>
     <Include file="TestNet.net.nml"/>
     <Include file="BallAndStick.cell.nml"/>
-   
+
     <Simulation id="SimTestNet" length="1000.0ms" step="0.025ms" target="TestNet" seed="5678">  <!-- Note seed: ensures same random numbers used every run -->
-        
         <Display id="pop0_v" title="Plots of pop0_v" timeScale="1ms" xmin="-100.0" xmax="1100.0" ymin="-80" ymax="40">
             <Line id="pop0_0_BallAndStick_0_v" quantity="pop0/0/BallAndStick/0/v" scale="1mV" color="#d54f33" timeScale="1ms"/>
             <Line id="pop0_0_BallAndStick_1_v" quantity="pop0/0/BallAndStick/1/v" scale="1mV" color="#0534e4" timeScale="1ms"/>
@@ -33,21 +32,21 @@
             <Line id="pop0_0_BallAndStick_9_v" quantity="pop0/0/BallAndStick/9/v" scale="1mV" color="#3f9fe8" timeScale="1ms"/>
             <Line id="pop0_0_BallAndStick_10_v" quantity="pop0/0/BallAndStick/10/v" scale="1mV" color="#dda9d2" timeScale="1ms"/>
         </Display>
-        
+
         <OutputFile id="SimTestNet_pop0_v_dat" fileName="SimTestNet.pop0.v.dat">
-            <OutputColumn id="pop0_0_BallAndStick_0_v" quantity="pop0/0/BallAndStick/0/v"/> 
-            <OutputColumn id="pop0_0_BallAndStick_1_v" quantity="pop0/0/BallAndStick/1/v"/> 
-            <OutputColumn id="pop0_0_BallAndStick_2_v" quantity="pop0/0/BallAndStick/2/v"/> 
-            <OutputColumn id="pop0_0_BallAndStick_3_v" quantity="pop0/0/BallAndStick/3/v"/> 
-            <OutputColumn id="pop0_0_BallAndStick_4_v" quantity="pop0/0/BallAndStick/4/v"/> 
-            <OutputColumn id="pop0_0_BallAndStick_5_v" quantity="pop0/0/BallAndStick/5/v"/> 
-            <OutputColumn id="pop0_0_BallAndStick_6_v" quantity="pop0/0/BallAndStick/6/v"/> 
-            <OutputColumn id="pop0_0_BallAndStick_7_v" quantity="pop0/0/BallAndStick/7/v"/> 
-            <OutputColumn id="pop0_0_BallAndStick_8_v" quantity="pop0/0/BallAndStick/8/v"/> 
-            <OutputColumn id="pop0_0_BallAndStick_9_v" quantity="pop0/0/BallAndStick/9/v"/> 
-            <OutputColumn id="pop0_0_BallAndStick_10_v" quantity="pop0/0/BallAndStick/10/v"/> 
+            <OutputColumn id="pop0_0_BallAndStick_0_v" quantity="pop0/0/BallAndStick/0/v"/>
+            <OutputColumn id="pop0_0_BallAndStick_1_v" quantity="pop0/0/BallAndStick/1/v"/>
+            <OutputColumn id="pop0_0_BallAndStick_2_v" quantity="pop0/0/BallAndStick/2/v"/>
+            <OutputColumn id="pop0_0_BallAndStick_3_v" quantity="pop0/0/BallAndStick/3/v"/>
+            <OutputColumn id="pop0_0_BallAndStick_4_v" quantity="pop0/0/BallAndStick/4/v"/>
+            <OutputColumn id="pop0_0_BallAndStick_5_v" quantity="pop0/0/BallAndStick/5/v"/>
+            <OutputColumn id="pop0_0_BallAndStick_6_v" quantity="pop0/0/BallAndStick/6/v"/>
+            <OutputColumn id="pop0_0_BallAndStick_7_v" quantity="pop0/0/BallAndStick/7/v"/>
+            <OutputColumn id="pop0_0_BallAndStick_8_v" quantity="pop0/0/BallAndStick/8/v"/>
+            <OutputColumn id="pop0_0_BallAndStick_9_v" quantity="pop0/0/BallAndStick/9/v"/>
+            <OutputColumn id="pop0_0_BallAndStick_10_v" quantity="pop0/0/BallAndStick/10/v"/>
         </OutputFile>
-        
+
     </Simulation>
 
 </Lems>

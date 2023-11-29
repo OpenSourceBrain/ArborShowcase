@@ -27,7 +27,12 @@ print(nml)
 # Add locsets to the label dictionary.
 labels['stim_site'] = '(location 0 0.5)' # site for the stimulus
 #labels['axon_end']  = '(restrict (terminal) (region "axon_group"))' # end of the axon.
-labels['dend_end']  = '(restrict (terminal) (region "dendrite_group"))' # end of the axon.
+
+if arbor.__version__.startswith('0.9'):
+    labels['dend_end']  = '(restrict-to (terminal) (region "dendrite_group"))' # end of the axon.
+else:
+    labels['dend_end']  = '(restrict (terminal) (region "dendrite_group"))' # end of the axon.
+
 labels['root']      = '(root)' # the start of the soma in this morphology is at the root of the cell.
 
 

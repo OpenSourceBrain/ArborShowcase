@@ -47,6 +47,7 @@ jobs:
         # Note: specific version of Arbor may have been nstalled above if Arbor version specfied
         omv install arbor # use omv preferred version...
         pip install pandas seaborn
+        pip list
 
     - name: Run Arbor example
       run: |
