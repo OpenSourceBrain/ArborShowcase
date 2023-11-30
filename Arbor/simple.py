@@ -13,9 +13,10 @@ labels = arbor.label_dict({'soma':   '(tag 1)',
 
 # (3) Create cell and set properties
 decor = arbor.decor()
-decor.set_property(Vm=-40)
+decor.set_property(Vm=-65)
 decor.paint('"soma"', arbor.density('hh'))
-decor.place('"midpoint"', arbor.iclamp( 10, 2, 0.8), 'iclamp')
+decor.paint('"soma"', arbor.density('pas'))
+decor.place('"midpoint"', arbor.iclamp( 5, 25, 0.02), 'iclamp')
 decor.place('"midpoint"', arbor.threshold_detector(-10), 'detector')
 
 # (4) Create cell and the single cell model based on it
@@ -27,8 +28,8 @@ m = arbor.single_cell_model(cell)
 # (6) Attach voltage probe sampling at 10 kHz (every 0.1 ms).
 m.probe('voltage', '"midpoint"', frequency=10000)
 
-# (7) Run simulation for 30 ms of simulated activity.
-m.run(tfinal=30)
+# (7) Run simulation for 50 ms of simulated activity.
+m.run(tfinal=50)
 
 # (8) Print spike times.
 if len(m.spikes)>0:
@@ -37,6 +38,12 @@ if len(m.spikes)>0:
         print('{:3.3f}'.format(s))
 else:
     print('no spikes')
+
+file_of = open("simple.dat", 'w')
+
+for i in zip(m.traces[0].time, m.traces[0].value):
+    file_of.write('%s\t%s\n'%(i[0]/1000,i[1]/1000))
+file_of.close()
 
 if not '-nogui' in sys.argv:
     import matplotlib.pylab as plt

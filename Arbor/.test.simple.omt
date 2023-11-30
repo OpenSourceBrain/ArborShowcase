@@ -2,3 +2,16 @@
 
 target: simple.py
 engine: Arbor
+mep: .test.simple.mep
+experiments:
+  E:
+    observables:
+      spike times:
+        file:
+          path: simple.dat
+          columns: [0,1]
+          scaling: [1000, 1000]
+        spike detection:
+          method: threshold
+          threshold: 0
+        tolerance: 0

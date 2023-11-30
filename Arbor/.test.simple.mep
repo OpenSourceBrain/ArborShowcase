@@ -1,0 +1,6 @@
+system: Test Simple
+
+experiments:
+    E:
+        expected:
+            spike times: [ 7.325 ]
