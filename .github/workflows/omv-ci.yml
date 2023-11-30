@@ -36,6 +36,7 @@ jobs:
     - name: Install OMV
       run: |
         pip install git+https://github.com/OpenSourceBrain/osb-model-validation
+        pip install pandas seaborn # required for some test python scripts
         omv list -V
 
     - name: Run OMV tests on engine ${{ matrix.engine }}
@@ -44,9 +45,8 @@ jobs:
         
     - name: Install Arbor
       run: |
-        # Note: specific version of Arbor may have been nstalled above if Arbor version specfied
+        # Note: specific version of Arbor may have been installed above if Arbor version specfied
         omv install arbor # use omv preferred version...
-        pip install pandas seaborn
         pip list
 
     - name: Run Arbor example
