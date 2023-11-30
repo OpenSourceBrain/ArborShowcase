@@ -29,9 +29,9 @@ labels['stim_site'] = '(location 0 0.5)' # site for the stimulus
 #labels['axon_end']  = '(restrict (terminal) (region "axon_group"))' # end of the axon.
 
 if arbor.__version__.startswith('0.9'):
-    labels['dend_end']  = '(restrict-to (terminal) (region "dendrite_group"))' # end of the axon.
+    labels['dend_end']  = '(restrict-to (terminal) (region "dendrite_group"))' # end of the dend.
 else:
-    labels['dend_end']  = '(restrict (terminal) (region "dendrite_group"))' # end of the axon.
+    labels['dend_end']  = '(restrict (terminal) (region "dendrite_group"))' # end of the dend.
 
 labels['root']      = '(root)' # the start of the soma in this morphology is at the root of the cell.
 
@@ -39,6 +39,10 @@ labels['root']      = '(root)' # the start of the soma in this morphology is at 
 labels['soma'] = '(location 0 0.5)'
 #labels['dend1'] = '(location 1 0.5)'
 #labels['dend2'] = '(location 2 0.5)'
+
+print("Current labels:")
+for l in labels:
+    print("  Label %s: %s"% (l, labels[l]))
 
 decor = arbor.decor()
 
