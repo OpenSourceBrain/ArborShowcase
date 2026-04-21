@@ -27,9 +27,9 @@ jobs:
         engine: [ jNeuroML_NEURON, pyNeuroML, jNeuroML, Arbor, "Arbor:0.8", "Arbor:0.8.1", "Arbor:0.9.0", "Arbor:0.10.0", "Arbor:0.11.0" ]
 
     steps:
-    - uses: actions/checkout@v4
+    - uses: actions/checkout@v6
     - name: Set up Python  ${{ matrix.python-version }}
-      uses: actions/setup-python@v5
+      uses: actions/setup-python@v6
       with:
         python-version:  ${{ matrix.python-version }}
 
